@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAVRANG 2026 &amp; ThinkTank 2026 — SUAS, Indore | ACM SUAS</title>
+<meta name="description" content="Navratri at SUAS 2026: colour calendar, daily aarti, Garba and Dandiya. Featured day: Yellow Day, 15 October 2026. Also on 15 October: ThinkTank 2026 with Ideathon and Open Mic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Caveat:wght@600&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="ACM SUAS, NAVRANG 2026 — home">
+    <span class="logo-slot" data-logo="acm" role="img" aria-label="ACM logo"></span>
+    <span class="brand-text"><b>ACM SUAS</b><i>NAVRANG</i></span>
+  </a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" class="menu" aria-label="Primary">
+    <a href="#celebration">Navratri</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#track-a">Ideathon</a>
+    <a href="#track-b">Open Mic</a>
+    <a href="#beyond">DMM Stalls</a>
+    <a href="#event-info">Event Info</a>
+    <a href="#faq">FAQs</a>
+    <a class="cta" href="#register">Register</a>
+  </nav>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" data-depth="8"><div class="rangoli r1"></div><div class="rangoli r2"></div></div>
+  <div class="hero-photo" data-depth="18"><div class="slot" data-img="hero"></div></div>
+  <div class="hero-sticks" data-depth="34" aria-hidden="true"><span class="stick s1"></span><span class="stick s2"></span></div>
+  <div class="hero-copy" data-depth="-6">
+    <p class="script">Navratri at SUAS</p>
+    <h1 class="wordmark" aria-label="NAVRANG 2026"><span>NAV</span><span>RANG</span><em>2026</em></h1>
+    <p class="tag"><i>The colours of Navratri. The rhythm of togetherness.</i></p>
+    <p class="lede">A celebration of culture, dance, devotion, and community at SUAS, Indore.</p>
+    <dl class="facts">
+      <div><dt>Featured date</dt><dd>15 October 2026</dd></div>
+      <div><dt>Venue</dt><dd data-cfg="venue"></dd></div>
+      <div><dt>Event timing</dt><dd>After 2:00 PM IST</dd></div>
+      <div><dt>Garba / Dandiya</dt><dd data-cfg="garba.time"></dd></div>
+      <div><dt>Daily aarti</dt><dd><span data-cfg="aarti.time"></span>, <span data-cfg="aarti.place"></span></dd></div>
+    </dl>
+    <p class="btns"><a class="btn solid" href="#celebration">Explore the Celebration</a><a class="btn ghost" href="#calendar">Discover the Colour Calendar</a><a class="btn ghost" href="#thinktank">ThinkTank 2026</a></p>
+  </div>
+  <canvas id="sparks" aria-hidden="true"></canvas>
+</section>
+
+<!-- CELEBRATION -->
+<section class="story" id="celebration">
+  <div class="story-img" data-parallax="0.08"><div class="slot tall" data-img="story"></div></div>
+  <div class="story-text">
+    <p class="script big">The spirit of Navratri</p>
+    <h2>Nine nights of rhythm, <br>devotion and company</h2>
+    <p>Navratri is a festival of devotion expressed through music, circling dance, and shared colour. At SUAS, it brings students, faculty and staff out of classrooms and into one ring, stepping to the same beat.</p>
+    <p>Each day carries its own colour and its own group. Mornings begin with aarti; afternoons belong to Garba and Dandiya. Come in the colour of the day.</p>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="cal" id="calendar">
+  <div class="cal-intro">
+    <p class="script">Colours in motion</p>
+    <h2>Six dates. Six colours. One campus celebration.</h2>
+    <p>Tap, swipe through, or shuffle. The full schedule is also listed below the deck.</p>
+    <div class="deck-controls" role="group" aria-label="Deck controls">
+      <button class="btn solid" id="shuffle">Shuffle</button>
+      <button class="btn ghost" id="prev" aria-label="Previous date">Prev</button>
+      <button class="btn ghost" id="next" aria-label="Next date">Next</button>
+      <button class="btn ghost" id="jumpY">Show 15 October</button>
+    </div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </div>
+  <div class="deck-wrap">
+    <div class="deck" id="deck" role="listbox" aria-label="Navratri colour dates"></div>
+  </div>
+  <table class="schedule">
+    <caption>Full colour schedule</caption>
+    <thead><tr><th scope="col">Date</th><th scope="col">Day</th><th scope="col">Colour</th><th scope="col">School / group</th></tr></thead>
+    <tbody id="sched"></tbody>
+  </table>
+</section>
+
+<!-- YELLOW DAY -->
+<section class="yellow" id="yellow">
+  <div class="y-frame" aria-hidden="false">
+    <div class="y-layer back" data-tilt-depth="1"></div>
+    <div class="y-layer mid" data-tilt-depth="2"><div class="slot" data-img="yellow"></div></div>
+    <div class="y-layer front" data-tilt-depth="3"><span>15</span></div>
+  </div>
+  <div class="y-text">
+    <p class="script big">15 October — Yellow Day</p>
+    <h2>Thursday, 15 October 2026</h2>
+    <ul class="plain">
+      <li><b>Theme</b> Yellow</li>
+      <li><b>School</b> School of DMM &amp; School of RM</li>
+      <li><b>Venue</b> <span data-cfg="venue"></span></li>
+      <li><b>Timing</b> <span data-cfg="featuredTiming"></span></li>
+      <li><b>Garba / Dandiya</b> <span data-cfg="garba.time"></span> daily</li>
+      <li><b>Aarti</b> <span data-cfg="aarti.time"></span> daily, <span data-cfg="aarti.place"></span></li>
+    </ul>
+    <p class="btns y-link"><a class="btn solid" href="#thinktank">ThinkTank 2026 is also on 15 October</a></p>
+  </div>
+</section>
+
+<!-- AARTI -->
+<section class="aarti" id="aarti">
+  <div class="aarti-inner">
+    <div class="diya-frame"><div class="slot round" data-img="aarti"></div></div>
+    <div>
+      <p class="script">Morning light</p>
+      <h2>Daily Aarti — <span data-cfg="aarti.time"></span></h2>
+      <p class="place"><span data-cfg="aarti.place"></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- GARBA -->
+<section class="garba" id="garba">
+  <div class="g-ring" aria-hidden="true"><svg viewBox="0 0 400 400"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140" stroke-dasharray="4 10"/><circle cx="200" cy="200" r="90"/><circle cx="200" cy="200" r="40" stroke-dasharray="2 6"/></g></svg></div>
+  <div class="g-panels">
+    <div class="slot p1" data-img="garba"></div>
+    <div class="slot p2" data-img="gallery.0"></div>
+  </div>
+  <div class="g-text">
+    <h2>Daily Garba &amp; Dandiya</h2>
+    <p class="time" data-cfg="garba.time"></p>
+    <p data-cfg="garba.place"></p>
+    <p class="script">Step in. Keep the beat.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <h2 class="g-title">The look of the festival</h2>
+  <div class="collage">
+    <div class="slot c1" data-img="gallery.1"></div>
+    <div class="slot c2" data-img="gallery.2"></div>
+    <div class="slot c3" data-img="gallery.3"></div>
+    <p class="c-note script">A celebration of togetherness</p>
+  </div>
+  <p class="small">Images are illustrative and do not depict previous SUAS celebrations unless stated.</p>
+</section>
+
+<!-- NAVRATRI INFO -->
+<section class="info" id="navratri-info" aria-labelledby="ni-h">
+  <h2 id="ni-h">Navratri celebration details</h2>
+  <dl class="grid-info">
+    <div><dt>Organizer</dt><dd data-cfg="organizer"></dd></div>
+    <div><dt>Institution</dt><dd data-cfg="institution"></dd></div>
+    <div><dt>Venue</dt><dd data-cfg="venue"></dd></div>
+    <div><dt>Featured day</dt><dd>Yellow Day, Thursday 15 October 2026</dd></div>
+    <div><dt>Event timing</dt><dd data-cfg="featuredTiming"></dd></div>
+    <div><dt>Aarti</dt><dd><span data-cfg="aarti.time"></span>, <span data-cfg="aarti.place"></span></dd></div>
+    <div><dt>Garba / Dandiya</dt><dd data-cfg="garba.time"></dd></div>
+    <div class="wide"><dt>Colour dates</dt><dd id="infoDates"></dd></div>
+  </dl>
+</section>
+
+<!-- ============ THINKTANK 2026 ============ -->
+<section class="tt-intro" id="thinktank" aria-labelledby="tt-h">
+  <p class="eyebrow">01 / THINKTANK 2026</p>
+  <h2 id="tt-h">Two ways in.<br><em>One day on campus.</em></h2>
+  <p class="tt-lede">ThinkTank 2026 is hosted by ACM SUAS on <b>15 October 2026</b> at <b>SUAS Amphitheatre</b>. Bring an idea to Track A or an act to Track B. Entry is free, and participation is for SUAS students.</p>
+  <p class="small tt-sep">ThinkTank is its own programme. It is separate from the daily Navratri aarti and Garba schedule above.</p>
+  <div class="tt-doors">
+    <a class="door a" href="#track-a"><span class="k">Track A</span><span class="n">Ideathon</span><span class="s">Open-topic idea pitching</span></a>
+    <a class="door b" href="#track-b"><span class="k">Track B</span><span class="n">Open Mic</span><span class="s">A creative open stage</span></a>
+  </div>
+</section>
+
+<div class="chapter" aria-hidden="true"><span>02 / THE TWO TRACKS</span></div>
+
+<!-- TRACK A -->
+<section class="ta" id="track-a" aria-labelledby="ta-h">
+  <div class="ta-copy rv">
+    <p class="eyebrow">TRACK A / THE WORLD OF IDEAS</p>
+    <h2 id="ta-h">Have an idea? Give it a place to begin.</h2>
+    <p class="ta-desc">An open-topic idea-pitching space for thoughts from any domain — technology, business, AI, education, sustainability, healthcare, social impact, or something we have not named yet.</p>
+    <ul class="attrs" aria-label="Ideathon at a glance"><li>Open topic</li><li>Solo or team</li><li>Free entry</li></ul>
+    <p class="btns"><a class="btn solid" href="#ideathon-form" data-track="ideathon">Register for Ideathon</a><a class="btn ghost" href="#ideathon-details">Read the track</a></p>
+  </div>
+  <div class="ta-art" aria-hidden="true">
+    <svg viewBox="0 0 520 520" class="constel" focusable="false">
+      <g class="lines" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path pathLength="1" d="M90 400 L190 250 L330 300 L430 120"/>
+        <path pathLength="1" d="M190 250 L170 110 L300 70 L430 120"/>
+        <path pathLength="1" d="M330 300 L420 420 L260 450 L90 400"/>
+        <path pathLength="1" d="M300 70 L330 300"/>
+        <path pathLength="1" class="dash" d="M170 110 L90 400"/>
+      </g>
+      <g class="shapes" fill="none" stroke="currentColor" stroke-width="1.6">
+        <polygon class="sh s1" points="430,70 470,140 390,140"/>
+        <rect class="sh s2" x="60" y="70" width="64" height="64" transform="rotate(14 92 102)"/>
+        <circle class="sh s3" cx="410" cy="440" r="34"/>
+        <circle class="sh s4" cx="190" cy="250" r="70" stroke-dasharray="3 9"/>
+      </g>
+      <g class="nodes">
+        <circle class="nd" cx="90" cy="400" r="9"/><circle class="nd big" cx="190" cy="250" r="14"/><circle class="nd" cx="330" cy="300" r="9"/>
+        <circle class="nd" cx="430" cy="120" r="9"/><circle class="nd" cx="170" cy="110" r="7"/><circle class="nd" cx="300" cy="70" r="8"/>
+        <circle class="nd" cx="420" cy="420" r="7"/><circle class="nd" cx="260" cy="450" r="8"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="ad" id="ideathon-details" aria-labelledby="ad-h">
+  <div class="ad-letter" aria-hidden="true">A</div>
+  <div class="ad-sketch" aria-hidden="true" data-prog>
+    <svg viewBox="0 0 400 400" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <circle class="piece" style="--dx:-120px;--dy:-60px;--dr:-40deg" cx="140" cy="150" r="80"/>
+        <polygon class="piece" style="--dx:140px;--dy:-80px;--dr:50deg" points="250,60 340,210 160,210"/>
+        <rect class="piece" style="--dx:-60px;--dy:130px;--dr:30deg" x="190" y="220" width="130" height="100" rx="6"/>
+        <path class="piece" style="--dx:120px;--dy:90px;--dr:-60deg" stroke-dasharray="2 9" d="M60 330 Q140 230 250 300 T360 250"/>
+      </g>
+      <g fill="currentColor"><circle class="piece" style="--dx:-80px;--dy:80px;--dr:0deg" cx="140" cy="150" r="6"/><circle class="piece" style="--dx:90px;--dy:-120px;--dr:0deg" cx="250" cy="60" r="6"/><circle class="piece" style="--dx:30px;--dy:90px;--dr:0deg" cx="255" cy="270" r="6"/></g>
+    </svg>
+  </div>
+  <div class="ad-text rv">
+    <p class="label">A / 01</p>
+    <h2 id="ad-h">Ideathon, without <span class="boxed">the box</span></h2>
+    <p class="sub">Start with a question. Let the room follow.</p>
+    <p>Bring an idea worth exploring and explain the problem, possibility, or change you want to put into the world. The topic is open by design. Participation can be individual or in a team; any final submission guidance will be shared by the organizers.</p>
+    <p class="btns"><a class="btn solid big" href="#ideathon-form" data-track="ideathon">Register for Ideathon</a></p>
+  </div>
+</section>
+
+<!-- TRACK B -->
+<section class="tb" id="track-b" aria-labelledby="tb-h">
+  <div class="tb-spot" aria-hidden="true"></div>
+  <div class="tb-type" aria-hidden="true" data-prog><span class="l1">YOUR TALENT.</span><span class="l2">YOUR MOMENT.</span></div>
+  <div class="tb-copy rv">
+    <p class="eyebrow">TRACK B / THE WORLD OF EXPRESSION</p>
+    <h2 id="tb-h">Your talent. Your moment.</h2>
+    <p class="tb-desc">A creative open-stage opportunity for acts that deserve an audience — stand-up comedy, ghazal, shayari / poetry, singing, instrumental performances, and other suitable performances.</p>
+    <ul class="stamps" aria-label="Open Mic at a glance"><li>Bring your act</li><li>Solo or group</li><li>Many forms welcome</li></ul>
+    <p class="btns"><a class="btn solid" href="#openmic-form" data-track="openmic">Register for Open Mic</a><a class="btn ghost light" href="#openmic-details">Explore the track</a></p>
+  </div>
+  <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="marquee" aria-hidden="true"><div><span>Stand-up comedy</span><span>Ghazal</span><span>Shayari / poetry</span><span>Singing</span><span>Instrumental</span><span>Stand-up comedy</span><span>Ghazal</span><span>Shayari / poetry</span><span>Singing</span><span>Instrumental</span></div></div>
+</section>
+
+<section class="bd" id="openmic-details" aria-labelledby="bd-h">
+  <div class="bd-text rv">
+    <p class="label">B / 01</p>
+    <h2 id="bd-h">Bring the <span class="ex">expression</span></h2>
+    <p class="sub">A stage for the act only you can bring.</p>
+    <p>Choose the category that fits, or describe another suitable act. Participation can be solo or as a group. Final performance-slot, equipment, language, and duration details are not confirmed yet and will be communicated by the organizers.</p>
+    <p class="btns"><a class="btn solid big" href="#openmic-form" data-track="openmic">Register for Open Mic</a></p>
+  </div>
+  <div class="bd-cats">
+    <p class="small cats-h">Pick a category to start your registration</p>
+    <ol class="cats">
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Stand-up comedy"><span>01</span>Stand-up comedy</a></li>
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Ghazal"><span>02</span>Ghazal</a></li>
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Shayari / poetry"><span>03</span>Shayari / poetry</a></li>
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Singing"><span>04</span>Singing</a></li>
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Instrumental performance"><span>05</span>Instrumental performance</a></li>
+      <li><a href="#openmic-form" data-track="openmic" data-cat="Other suitable act"><span>06</span>Other suitable act</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- BEYOND THE STAGE -->
+<section class="bs" id="beyond" aria-labelledby="bs-h">
+  <div class="bs-head rv">
+    <p class="eyebrow">03 / BEYOND THE STAGE</p>
+    <h2 id="bs-h">The festival is bigger than the format.</h2>
+    <p class="sub">Stay for the in-between.</p>
+    <p class="bs-body">ThinkTank is also a campus atmosphere: food stalls, social interaction, exploration, and additional activities or experiences that the organizers may announce later.</p>
+  </div>
+  <aside class="dmm" aria-label="School of DMM stalls">
+    <span class="dmm-k">Stalls &amp; stall-based experiences</span>
+    <p class="dmm-t">Stalls and stall-based experiences by the <b>School of DMM</b>.</p>
+    <p class="dmm-s">The School of DMM is handling the stalls-related aspect of ThinkTank 2026.</p>
+  </aside>
+  <div class="strip-wrap">
+    <div class="strip" id="strip" tabindex="0" role="region" aria-label="Campus atmosphere images. Scroll sideways to browse.">
+      <figure class="fr f1"><div class="slot" data-img="beyond.0"></div></figure>
+      <figure class="fr f2"><div class="slot" data-img="beyond.1"></div></figure>
+      <figure class="fr f3"><div class="slot" data-img="beyond.2"></div></figure>
+      <figure class="fr f4"><div class="slot" data-img="beyond.3"></div></figure>
+      <figure class="fr f5"><div class="slot" data-img="beyond.4"></div></figure>
+    </div>
+    <div class="strip-ctl"><button class="btn ghost dark" id="stripPrev" type="button" aria-label="Previous images">←</button><button class="btn ghost dark" id="stripNext" type="button" aria-label="Next images">→</button></div>
+  </div>
+  <div class="stalls" aria-live="polite">
+    <h3>What's at the stalls</h3>
+    <ul id="stallList" class="stall-list"></ul>
+  </div>
+  <p class="small bs-note">Images are illustrative. Stall names, menus, prices and activities will be added here only once confirmed.</p>
+</section>
+
+<!-- EVENT INFORMATION -->
+<section class="ev" id="event-info" aria-labelledby="ev-h">
+  <p class="eyebrow">04 / EVENT INFORMATION</p>
+  <h2 id="ev-h">The essentials, at a glance.</h2>
+  <div class="ev-grid">
+    <div class="ev-date" aria-label="Event date: 15 October 2026"><span class="dn">15</span><span class="dm">October</span><span class="dy">2026</span><span class="dw">ThinkTank 2026</span></div>
+    <dl class="ev-list" id="evList"></dl>
+    <div class="ev-ticket"><span class="tk">Registration closes</span><b id="evDeadline"></b></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <p class="eyebrow dark">QUESTIONS, ANSWERED CAREFULLY</p>
+  <h2 id="faq-h">Before you step in.</h2>
+  <p class="faq-intro">Only confirmed information lives here. If something is still being finalized, we say so.</p>
+  <div class="acc" id="faqList" data-acc></div>
+  <h3 class="faq-sub">About the Navratri celebration</h3>
+  <div class="acc" id="faqNav" data-acc></div>
+</section>
+
+<!-- REGISTER -->
+<section class="reg" id="register" aria-labelledby="reg-h">
+  <div class="reg-box">
+    <p class="eyebrow">05 / REGISTRATION</p>
+    <h2 id="reg-h">Choose your room.</h2>
+    <p class="sub light">Put something in motion.</p>
+    <p class="reg-intro">Registration is free and reserved for SUAS students. Choose one track below. You can register for the other track separately.</p>
+    <p class="demo-note" id="demoNote" role="note"><b>Frontend demo.</b> Registration is not connected to a backend yet. Nothing you type is sent, saved, emailed or officially recorded, and no confirmation will be issued. Watch for the organizers' announcement when registration goes live.</p>
+
+    <div class="tabs" role="tablist" aria-label="Choose a track">
+      <button class="tab" role="tab" id="tab-ideathon" aria-selected="true" aria-controls="ideathon-form" type="button" data-track="ideathon"><span class="t1">Ideathon</span><span class="t2">Track A</span></button>
+      <button class="tab" role="tab" id="tab-openmic" aria-selected="false" aria-controls="openmic-form" type="button" data-track="openmic" tabindex="-1"><span class="t1">Open Mic</span><span class="t2">Track B</span></button>
+    </div>
+
+    <!-- IDEATHON FORM -->
+    <form class="rform" id="ideathon-form" role="tabpanel" aria-labelledby="ideathon-form-h" tabindex="-1" novalidate data-form="ideathon">
+      <h3 id="ideathon-form-h">Ideathon registration</h3>
+      <p class="fdesc">Open-topic idea pitching. Solo or team.</p>
+      <div class="row2">
+        <div class="f"><label for="i-name">Full name <i>required</i></label><input id="i-name" name="name" autocomplete="name" required aria-describedby="i-name-e"><span class="err" id="i-name-e"></span></div>
+        <div class="f"><label for="i-email">College email <i>required</i></label><input id="i-email" name="email" type="email" autocomplete="email" required aria-describedby="i-email-e"><span class="err" id="i-email-e"></span></div>
+      </div>
+      <div class="row3">
+        <div class="f"><label for="i-enroll">Enrollment number <i>optional</i></label><input id="i-enroll" name="enrollment" autocomplete="off"></div>
+        <div class="f"><label for="i-branch">Branch / department <i>optional</i></label><input id="i-branch" name="branch"></div>
+        <div class="f"><label for="i-year">Year of study <i>optional</i></label><select id="i-year" name="year"><option value="">Select</option><option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option><option>Other</option></select></div>
+      </div>
+      <fieldset class="f radios" aria-describedby="i-part-e"><legend>Participation type <i>required</i></legend>
+        <label><input type="radio" name="participation" value="Solo" required> Solo</label>
+        <label><input type="radio" name="participation" value="Team"> Team</label>
+        <span class="err" id="i-part-e"></span></fieldset>
+      <div class="f cond" id="i-team-wrap" hidden><label for="i-team">Team name <i>optional</i></label><input id="i-team" name="teamName"></div>
+      <div class="f"><label for="i-title">Idea title <i>required</i></label><input id="i-title" name="ideaTitle" required aria-describedby="i-title-e"><span class="err" id="i-title-e"></span></div>
+      <div class="f"><label for="i-cat">Idea category <i>optional</i></label><select id="i-cat" name="ideaCategory"><option value="">Select</option><option>Technology</option><option>Business</option><option>AI</option><option>Education</option><option>Sustainability</option><option>Healthcare</option><option>Social impact</option><option>Other</option></select></div>
+      <div class="f"><label for="i-problem">Problem statement <i>required</i></label><textarea id="i-problem" name="problem" rows="3" maxlength="800" required aria-describedby="i-problem-c i-problem-e"></textarea><span class="cnt" id="i-problem-c" data-for="i-problem">0 / 800</span><span class="err" id="i-problem-e"></span></div>
+      <div class="f"><label for="i-desc">Short idea description <i>required</i></label><textarea id="i-desc" name="description" rows="5" maxlength="1600" required aria-describedby="i-desc-c i-desc-e"></textarea><span class="cnt" id="i-desc-c" data-for="i-desc">0 / 1600</span><span class="err" id="i-desc-e"></span></div>
+      <div class="f"><label for="i-sol">Proposed solution <i>optional</i></label><textarea id="i-sol" name="solution" rows="3" maxlength="1200" aria-describedby="i-sol-c"></textarea><span class="cnt" id="i-sol-c" data-for="i-sol">0 / 1200</span></div>
+      <div class="f check"><input id="i-ok" name="ack" type="checkbox" required aria-describedby="i-ok-e"><label for="i-ok">I am a SUAS student and I understand how my details will be used (see the note below).</label><span class="err" id="i-ok-e"></span></div>
+      <p class="use small">How your details are used: this page is a frontend demo, so entries stay in your browser and are not sent anywhere. Once registration is live, details are intended only for organizing ThinkTank participation. Only the fields above are collected.</p>
+      <button class="btn solid submit" type="submit">Submit demo entry</button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <!-- OPEN MIC FORM -->
+    <form class="rform" id="openmic-form" role="tabpanel" aria-labelledby="openmic-form-h" tabindex="-1" novalidate hidden data-form="openmic">
+      <h3 id="openmic-form-h">Open Mic registration</h3>
+      <p class="fdesc">Bring a suitable act. Solo or group.</p>
+      <div class="row2">
+        <div class="f"><label for="o-name">Participant / group contact name <i>required</i></label><input id="o-name" name="name" autocomplete="name" required aria-describedby="o-name-e"><span class="err" id="o-name-e"></span></div>
+        <div class="f"><label for="o-email">College email <i>required</i></label><input id="o-email" name="email" type="email" autocomplete="email" required aria-describedby="o-email-e"><span class="err" id="o-email-e"></span></div>
+      </div>
+      <div class="f"><label for="o-enroll">Enrollment number <i>optional</i></label><input id="o-enroll" name="enrollment" autocomplete="off"></div>
+      <fieldset class="f radios" aria-describedby="o-part-e"><legend>Participation type <i>required</i></legend>
+        <label><input type="radio" name="participation" value="Solo" required> Solo</label>
+        <label><input type="radio" name="participation" value="Group"> Group</label>
+        <span class="err" id="o-part-e"></span></fieldset>
+      <div class="row2 cond" id="o-group-wrap" hidden>
+        <div class="f"><label for="o-group">Group name <i>optional</i></label><input id="o-group" name="groupName"></div>
+        <div class="f"><label for="o-count">Number of performers <i>required</i></label><input id="o-count" name="performers" type="number" min="2" step="1" inputmode="numeric" aria-describedby="o-count-e"><span class="err" id="o-count-e"></span></div>
+      </div>
+      <div class="f"><label for="o-cat">Performance category <i>required</i></label><select id="o-cat" name="category" required aria-describedby="o-cat-e"><option value="">Select</option><option>Stand-up comedy</option><option>Ghazal</option><option>Shayari / poetry</option><option>Singing</option><option>Instrumental performance</option><option>Other suitable act</option></select><span class="err" id="o-cat-e"></span></div>
+      <div class="row2">
+        <div class="f"><label for="o-title">Act title <i>required</i></label><input id="o-title" name="actTitle" required aria-describedby="o-title-e"><span class="err" id="o-title-e"></span></div>
+        <div class="f"><label for="o-lang">Preferred language <i>optional</i></label><input id="o-lang" name="language"></div>
+      </div>
+      <div class="f"><label for="o-desc">Brief act description <i>required</i></label><textarea id="o-desc" name="description" rows="5" maxlength="1200" required aria-describedby="o-desc-c o-desc-e"></textarea><span class="cnt" id="o-desc-c" data-for="o-desc">0 / 1200</span><span class="err" id="o-desc-e"></span></div>
+      <div class="f"><label for="o-tech">Special technical requirements <i>optional</i></label><textarea id="o-tech" name="technical" rows="2" maxlength="400" aria-describedby="o-tech-c"></textarea><span class="cnt" id="o-tech-c" data-for="o-tech">0 / 400</span></div>
+      <div class="f"><label for="o-link">Performance sample link <i>optional</i></label><input id="o-link" name="sampleLink" type="url" inputmode="url" placeholder="https://" aria-describedby="o-link-e"><span class="err" id="o-link-e"></span></div>
+      <div class="f check"><input id="o-ok" name="ack" type="checkbox" required aria-describedby="o-ok-e"><label for="o-ok">I am a SUAS student and I understand how my details will be used (see the note below).</label><span class="err" id="o-ok-e"></span></div>
+      <p class="use small">How your details are used: this page is a frontend demo, so entries stay in your browser and are not sent anywhere. Once registration is live, details are intended only for organizing ThinkTank participation. Only the fields above are collected. Submitting does not guarantee a performance slot.</p>
+      <button class="btn solid submit" type="submit">Submit demo entry</button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" id="closing">
+  <div class="c-geo" aria-hidden="true"></div>
+  <p class="script huge">Let the colours bring us together.</p>
+  <p class="btns"><a class="btn solid" href="#calendar">See the colour calendar</a><a class="btn ghost light" href="#event-info">ThinkTank event information</a></p>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand"><span class="logo-slot" data-logo="acm" role="img" aria-label="ACM logo"></span>
+    <div><b>ACM SUAS</b><br>NAVRANG 2026<br><span data-cfg="institution"></span></div></div>
+  <div>15 October 2026 featured · <span data-cfg="venue"></span></div>
+  <nav aria-label="Footer"><a href="#celebration">Celebration</a> <a href="#calendar">Calendar</a> <a href="#track-a">Ideathon</a> <a href="#track-b">Open Mic</a> <a href="#beyond">DMM Stalls</a> <a href="#event-info">Event info</a> <a href="#faq">FAQs</a> <a href="#register">Register</a></nav>
+  <div id="footContact"></div>
+  <div class="small" id="credits"></div>
+  <div class="small">© 2026 ACM SUAS. All rights reserved.</div>
+</footer>
+
+<div id="cursor" aria-hidden="true"><span class="cs a"></span><span class="cs b"></span></div>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
